@@ -62,7 +62,7 @@
           <div class="c-labels">
             <div class="lab-sort">
               <h3>类别:</h3>
-              <div class="sort-num" v-bind:class="{ active: isActive }">
+              <div class="sort-num" :class="{ active: isActive }">
                 <ul>
                   <li>
                     <Badge text="热">
@@ -119,7 +119,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="sort-more" @click="isShow()" v-bind:class="{ activeClass: isActive }">更多
+              <div class="sort-more" @click="isShow()" :class="{ activeClass: isActive }">更多
                 <Icon type="md-arrow-dropdown"/>
                 <Icon type="md-arrow-dropup"/>
               </div>
@@ -169,7 +169,7 @@
               </div>
             </div>
             <!-- 页面 -->
-            <div class="lab-page" v-bind:class="{ active: isActiveClass }">
+            <div class="lab-page" :class="{ active: isActiveClass }">
               <h3>页面:</h3>
               <div class="page-num">
                 <ul>
@@ -220,11 +220,7 @@
                   </li>
                 </ul>
               </div>
-              <div
-                class="page-more"
-                @click="isPage()"
-                v-bind:class="{ activeClass: isActiveClass }"
-              >更多
+              <div class="page-more" @click="isPage()" :class="{ activeClass: isActiveClass }">更多
                 <Icon type="md-arrow-dropdown"/>
                 <Icon type="md-arrow-dropup"/>
               </div>
@@ -633,6 +629,11 @@ export default {
           .nav-community {
             border-right: 1px solid #ebebeb;
           }
+          .ivu-menu-item-active,
+          .ivu-menu-item-selected {
+            border-bottom: 0;
+            color: #20a56e;
+          }
         }
         .ivu-menu-horizontal.ivu-menu-light:after {
           background: none;
@@ -966,7 +967,7 @@ export default {
         .c-custom {
           background: #e6e6e6;
           margin-top: 40px;
-           margin-bottom: 40px;
+          margin-bottom: 40px;
           display: flex;
           justify-content: space-between;
           align-items: center;
